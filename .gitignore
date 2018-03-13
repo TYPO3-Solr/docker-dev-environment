@@ -1,0 +1,6 @@
+.DS_Store
+.idea
+nbproject
+/backup/*
+/app/bin/*
+/app/web/*
