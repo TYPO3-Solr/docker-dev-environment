@@ -4,7 +4,6 @@ MAKEFLAGS += --silent
 list:
 	sh -c "echo; $(MAKE) -p no_targets__ | awk -F':' '/^[a-zA-Z0-9][^\$$#\/\\t=]*:([^=]|$$)/ {split(\$$1,A,/ /);for(i in A)print A[i]}' | grep -v '__\$$' | grep -v 'Makefile'| sort"
 
-
 #############################
 # Setup
 #############################
@@ -75,6 +74,9 @@ restore: mysql-restore solr-restore
 
 build:
 	bash bin/build.sh
+
+test:
+	bash bin/test.sh
 
 clean:
 	docker-compose down --remove-orphans --volumes
