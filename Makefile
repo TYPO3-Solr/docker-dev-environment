@@ -83,6 +83,9 @@ clean:
 	test -d app/web && { rm -rf app/web; }
 	test -d app/var && { rm -rf app/var; }
 
+clean-all:
+	docker system prune --all
+
 bash: shell
 
 shell:
