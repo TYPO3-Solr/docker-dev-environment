@@ -56,3 +56,14 @@ plugin.bootstrap_package_contentelements {
 #######################################
 plugin.bootstrap_package.settings.less >
 plugin.bootstrap_package.settings.overrideLessVariables >
+
+#######################################
+### SOLR ###
+#######################################
+plugin.tx_solr.enabled = 1
+plugin.tx_solr.solr.scheme = http
+plugin.tx_solr.solr.host = solr
+plugin.tx_solr.solr.port = 8983
+plugin.tx_solr.solr.path = /solr/core_en/
+plugin.tx_solr.solr.username =
+plugin.tx_solr.solr.password =
