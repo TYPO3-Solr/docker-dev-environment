@@ -5,4 +5,4 @@ install:
   - make setup
 
 script:
-  - curl -sL -w "%{http_code}\\n" "http://localhost:8000/typo3/" -o /dev/null
+  - curl -s -o /dev/null -w "%{http_code}" http://127.0.0.1:8000/typo3/
