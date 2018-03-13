@@ -70,8 +70,13 @@ dockerCopyFrom() {
     PATH_HOST="$2"
     docker cp "$(docker-compose ps -q app):${PATH_DOCKER}" "${PATH_HOST}"
 }
+
 dockerCopyTo() {
     PATH_HOST="$1"
     PATH_DOCKER="$2"
     docker cp "${PATH_HOST}" "$(docker-compose ps -q app):${PATH_DOCKER}"
+}
+
+runOnAppServer () {
+  docker-compose exec --user $(id -u):$(id -g) app ${1}
 }
