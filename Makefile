@@ -118,6 +118,21 @@ scheduler:
 	docker-compose exec --user application app /bin/bash -c '"$$WEB_DOCUMENT_ROOT"typo3/cli_dispatch.psh scheduler $(ARGS); (exit $$?)'
 
 #############################
+# Apache Solr for TYPO3
+#############################
+
+configure-private-packagist:
+	docker-compose exec --user application app composer config --global --auth http-basic.repo.packagist.com $(ARGS)
+	docker-compose exec --user application app composer config repositories.dkd-private-packagist '{"type": "composer", "url": "https://repo.packagist.com/dkd-internet-service/"}'
+	make composer update mirrors
+
+install-solrfal:
+	make composer require "apache-solr-for-typo3/solrfal:5.0.0"
+
+install-solrfluidgrouping:
+	make composer require "apache-solr-for-typo3/solrfluidgrouping:1.0.0"
+
+#############################
 # Argument fix workaround
 #############################
 %:
