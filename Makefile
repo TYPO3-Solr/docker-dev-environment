@@ -104,7 +104,7 @@ wait:
 #############################
 
 composer:
-	docker-compose exec --user $(id -u):$(id -g) app composer $(ARGS)
+	docker-compose exec --user application app composer $(ARGS)
 
 #############################
 # TYPO3
@@ -121,15 +121,15 @@ scheduler:
 # Apache Solr for TYPO3
 #############################
 
-configure-private-packagist:
+composer-use-dkd-packagist:
 	docker-compose exec --user application app composer config --global --auth http-basic.repo.packagist.com $(ARGS)
 	docker-compose exec --user application app composer config repositories.dkd-private-packagist '{"type": "composer", "url": "https://repo.packagist.com/dkd-internet-service/"}'
 	make composer update mirrors
 
-install-solrfal:
+composer-require-solrfal:
 	make composer require "apache-solr-for-typo3/solrfal:5.0.0"
 
-install-solrfluidgrouping:
+composer-require-solrfluidgrouping:
 	make composer require "apache-solr-for-typo3/solrfluidgrouping:1.0.0"
 
 #############################

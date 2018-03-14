@@ -30,4 +30,12 @@ Afterwards you can login into the TYPO3 backend
 http://localhost:8000/typo3/
 ```
 
+## Install EB Addon's
 
+EB Addons can be installed using private packagist. To do that, the following command can be used:
+
+```
+make composer-use-dkd-packagist <packagist-username> <token>
+make composer-require-solrfal
+make composer-require-solrfluidgrouping
+```
