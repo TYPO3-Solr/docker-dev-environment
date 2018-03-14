@@ -67,3 +67,5 @@ plugin.tx_solr.solr.port = 8983
 plugin.tx_solr.solr.path = /solr/core_en/
 plugin.tx_solr.solr.username =
 plugin.tx_solr.solr.password =
+plugin.tx_solr.search.targetPage = 2
+plugin.tx_solr.search.results.resultsPerPage = 10
