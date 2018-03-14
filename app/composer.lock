@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "ab440e39a2d069b7a89a29dfd15ba649",
+    "content-hash": "3ebd6e72bf7b569da3adb4659844034a",
     "packages": [
         {
             "name": "apache-solr-for-typo3/solr",
@@ -136,6 +136,74 @@
                 "typo3"
             ],
             "time": "2016-11-18T14:11:43+00:00"
+        },
+        {
+            "name": "apache-solr-for-typo3/tika",
+            "version": "3.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/TYPO3-Solr/ext-tika.git",
+                "reference": "28b020cf93305f0ebc629805cf170bef64ad5fff"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/TYPO3-Solr/ext-tika/zipball/28b020cf93305f0ebc629805cf170bef64ad5fff",
+                "reference": "28b020cf93305f0ebc629805cf170bef64ad5fff",
+                "shasum": ""
+            },
+            "require": {
+                "typo3/cms-core": ">=8.7.1"
+            },
+            "replace": {
+                "tika": "self.version",
+                "typo3-ter/tika": "self.version"
+            },
+            "require-dev": {
+                "phpspec/prophecy": "~1.0",
+                "phpunit/phpunit": ">=4.8.0 <6.0.0",
+                "typo3/testing-framework": "~1.0"
+            },
+            "suggest": {
+                "apache-solr-for-typo3/solr": "Allows to use Solr Cell - Apache Tika embedded in Apache Solr."
+            },
+            "type": "typo3-cms-extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.0.x-dev"
+                },
+                "typo3/cms": {
+                    "cms-package-dir": "{$vendor-dir}/typo3/cms",
+                    "web-dir": ".Build/Web"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "ApacheSolrForTypo3\\Tika\\": "Classes/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Ingo Renner",
+                    "email": "ingo@typo3.org",
+                    "role": "Lead Developer"
+                }
+            ],
+            "description": "Apache Tika for TYPO3",
+            "homepage": "http://www.typo3-solr.com",
+            "keywords": [
+                "cms",
+                "extraction",
+                "language",
+                "meta data",
+                "text",
+                "tika",
+                "typo3"
+            ],
+            "time": "2018-02-20T11:54:16+00:00"
         },
         {
             "name": "bk2k/bootstrap-package",
@@ -2535,6 +2603,51 @@
                 }
             ],
             "description": "Listing of files in the directory",
+            "homepage": "https://typo3.org",
+            "time": "2018-02-06T10:46:02+00:00"
+        },
+        {
+            "name": "typo3/cms-filemetadata",
+            "version": "v8.7.10",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/TYPO3-CMS/filemetadata.git",
+                "reference": "cc32ce1197872bc2e8658a9fbd831f23953c88c7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/TYPO3-CMS/filemetadata/zipball/cc32ce1197872bc2e8658a9fbd831f23953c88c7",
+                "reference": "cc32ce1197872bc2e8658a9fbd831f23953c88c7",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.0.0 <=7.2.99",
+                "typo3/cms-core": "8.7.10"
+            },
+            "conflict": {
+                "typo3/cms": "*"
+            },
+            "replace": {
+                "filemetadata": "*"
+            },
+            "type": "typo3-cms-framework",
+            "extra": {
+                "typo3/cms": {
+                    "extension-key": "filemetadata"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "TYPO3 Core Team",
+                    "email": "typo3cms@typo3.org",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Add advanced metadata to File.",
             "homepage": "https://typo3.org",
             "time": "2018-02-06T10:46:02+00:00"
         },

@@ -25,11 +25,13 @@
         "typo3/cms-setup": "^8.7.10",
         "typo3/cms-tstemplate": "^8.7.10",
         "typo3/cms-viewpage": "^8.7.10",
+        "typo3/cms-filemetadata": "^8.7.10",
 
         "apache-solr-for-typo3/solr": "8.0.1",
         "apache-solr-for-typo3/solrfluidexample": "1.0.0",
 
-        "dkd/apache-solr-for-typo3-sitepackage": "@dev"
+        "dkd/apache-solr-for-typo3-sitepackage": "@dev",
+        "apache-solr-for-typo3/tika": "3.0.0"
     },
     "require-dev": {
         "typo3/testing-framework": "^1.2.2 || ^2.0.1"

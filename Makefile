@@ -100,6 +100,13 @@ wait:
 	sleep 10
 
 #############################
+# Composer
+#############################
+
+composer:
+	docker-compose exec --user $(id -u):$(id -g) app composer $(ARGS)
+
+#############################
 # TYPO3
 #############################
 
@@ -108,7 +115,7 @@ cli:
 
 scheduler:
 	# TODO: remove the workaround "; (exit $?)" when https://github.com/docker/compose/issues/3379 has been fixed
-	docker-compose exec --user application app /bin/bash -c '"$$WEB_DOCUMENT_ROOT"typo3/cli_dispatch.phpsh scheduler $(ARGS); (exit $$?)'
+	docker-compose exec --user application app /bin/bash -c '"$$WEB_DOCUMENT_ROOT"typo3/cli_dispatch.psh scheduler $(ARGS); (exit $$?)'
 
 #############################
 # Argument fix workaround
