@@ -80,10 +80,8 @@ test:
 
 clean:
 	docker-compose down --remove-orphans --volumes
-	test -d app/private && { rm -rf app/private; }
-	test -d app/vendor && { rm -rf app/vendor; }
-	test -d app/web && { rm -rf app/web; }
-	test -d app/var && { rm -rf app/var; }
+	test -d app/vendor & rm -rf app/vendor
+	test -d app/web & rm -rf app/web
 
 clean-all:
 	docker system prune --all
@@ -91,10 +89,10 @@ clean-all:
 bash: shell
 
 shell:
-	docker-compose exec --user application app /bin/bash
+	docker-compose exec --user application app /bin/bash -i
 
 root:
-	docker-compose exec --user root app /bin/bash
+	docker-compose exec --user root app /bin/bash -i
 
 wait:
 	sleep 10
@@ -131,6 +129,24 @@ composer-require-solrfal:
 
 composer-require-solrfluidgrouping:
 	make composer require "apache-solr-for-typo3/solrfluidgrouping:1.0.0"
+
+composer-require-solr-source:
+	test -d app/web/typo3conf/ext/solr & rm -rf app/web/typo3conf/ext/solr
+	docker-compose exec --user application app composer require --prefer-source "apache-solr-for-typo3/solr:dev-release-8.0.x"
+
+#############################
+# CI Testing
+#############################
+
+ci-bash:
+	docker-compose exec --user travis ci /bin/bash -i
+
+ci-solr-bootstrap:
+	make composer-require-solr-source
+	docker-compose exec --user travis ci /bin/bash -i /opt/scripts/ci-bootstrap.sh
+
+ci-solr-test:
+	docker-compose exec --user travis ci /bin/bash -i /opt/scripts/ci-test.sh
 
 #############################
 # Argument fix workaround

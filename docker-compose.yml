@@ -98,6 +98,21 @@
            ports:
              - 19998:9998
 
+         ######################################
+         # CI
+         ######################################
+         ci:
+           # We use the travis php container since the we have php, java & mysql later we could use single containers for that for ci
+           # https://docs.travis-ci.com/user/common-build-problems/#Running-a-Container-Based-Docker-Image-Locally
+           image: travisci/ci-garnet:packer-1512502276-986baf0
+           command: /sbin/init
+           volumes:
+             - ./bin/:/opt/scripts/
+             - ./app/:/app/
+             - ./:/docker/
+           env_file:
+             - etc/environment.yml
+             - etc/environment.development.yml
        volumes:
          mysql:
          postgres:

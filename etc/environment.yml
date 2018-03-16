@@ -79,3 +79,13 @@ FTP_USER=dev
 FTP_PASSWORD=dev
 FTP_PATH=/storage/ftp/
 #FTP_PATH=/app/
+
+#######################################
+# CI settings
+CI_PHP_VERSION=7.0
+CI_PHP_CS_FIXER_VERSION=v2.3.2
+CI_TYPO3_VERSION=^8.7
+CI_DB_USER=root
+CI_DB_PASSWORD=
+CI_DB_HOST=localhost
+CI_DB_NAME=typo3_ci

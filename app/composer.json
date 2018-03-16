@@ -7,10 +7,7 @@
     "description" : "Distribution for development of EXT:solr based on helhum/typo3-distribution",
     "license": "GPL-2.0+",
     "require": {
-        "helhum/typo3-secure-web": "^0.2.7",
         "helhum/typo3-console": "5.1.1",
-
-        "roave/security-advisories": "dev-master",
 
         "typo3/cms-belog": "^8.7.10",
         "typo3/cms-beuser": "^8.7.10",
@@ -27,7 +24,7 @@
         "typo3/cms-viewpage": "^8.7.10",
         "typo3/cms-filemetadata": "^8.7.10",
 
-        "apache-solr-for-typo3/solr": "8.0.1",
+        "apache-solr-for-typo3/solr": "dev-release-8.0.x",
         "apache-solr-for-typo3/solrfluidexample": "1.0.0",
 
         "dkd/apache-solr-for-typo3-sitepackage": "@dev",
@@ -38,7 +35,7 @@
     },
     "extra": {
         "typo3/cms": {
-            "root-dir": "private",
+            "root-dir": "web",
             "web-dir": "web"
         }
     }
