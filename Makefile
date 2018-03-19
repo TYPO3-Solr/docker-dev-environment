@@ -83,9 +83,6 @@ clean:
 	test -d app/vendor & rm -rf app/vendor
 	test -d app/web & rm -rf app/web
 
-clean-all:
-	docker system prune --all
-
 bash: shell
 
 shell:
@@ -96,6 +93,13 @@ root:
 
 wait:
 	sleep 10
+
+#############################
+# Docker
+#############################
+
+docker-prune:
+	docker system prune --all
 
 #############################
 # Composer
