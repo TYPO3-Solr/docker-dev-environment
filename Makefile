@@ -129,10 +129,10 @@ composer-use-dkd-packagist:
 	make composer update mirrors
 
 composer-require-solrfal:
-	make composer require "apache-solr-for-typo3/solrfal:5.0.0"
+	make composer require "apache-solr-for-typo3/solrfal:~5.0.0"
 
 composer-require-solrfluidgrouping:
-	make composer require "apache-solr-for-typo3/solrfluidgrouping:1.0.0"
+	make composer require "apache-solr-for-typo3/solrfluidgrouping:~1.0.0"
 
 composer-require-solr-source:
 	test -d app/web/typo3conf/ext/solr & rm -rf app/web/typo3conf/ext/solr
