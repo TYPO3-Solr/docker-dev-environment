@@ -82,7 +82,7 @@ FTP_PATH=/storage/ftp/
 
 #######################################
 # CI settings
-CI_PHP_VERSION=7.0
+CI_PHP_VERSION=7.2
 CI_PHP_CS_FIXER_VERSION=v2.3.2
 CI_TYPO3_VERSION=^8.7
 CI_DB_USER=root
