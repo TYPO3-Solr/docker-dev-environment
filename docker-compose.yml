@@ -113,6 +113,16 @@
            env_file:
              - etc/environment.yml
              - etc/environment.development.yml
+
+         #######################################
+         # Render Documentation
+         # Usage decribed here: https://github.com/t3docs/docker-render-documentation
+         #######################################
+         # documentation:
+         #  image: t3docs/render-documentation
+         #  volumes:
+         #    - ./app/:/app/:cached
+
        volumes:
          mysql:
          postgres:
