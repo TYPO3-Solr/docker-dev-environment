@@ -145,6 +145,9 @@ composer-require-solr-source:
 ci-bash:
 	docker-compose exec --user travis ci /bin/bash -i
 
+ci-install-php:
+	docker-compose exec --user travis ci /bin/bash -i /opt/scripts/ci-install-php.sh
+
 ci-solr-bootstrap:
 	make composer-require-solr-source
 	docker-compose exec --user travis ci /bin/bash -i /opt/scripts/ci-bootstrap.sh
